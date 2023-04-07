@@ -4,10 +4,11 @@ import { useContext } from 'react'
 
 export const Product = (props) => {
 
-
     const {id, productImage, price,productName} = props.data
     const {addToCart, cardItem}= useContext(ShopContext)
     const cardItemAmount = cardItem[id]
+
+
   return (
     <div className='product'>
     <img src={productImage}/>
