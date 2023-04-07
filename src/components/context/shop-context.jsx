@@ -27,7 +27,23 @@ const removeFromCart = (itemId) =>{
     setCardItem((prev) => ({ ...prev, [itemId]: prev[itemId] -1 }))}
 
 
-    const contextValue = {addToCart, removeFromCart,cardItem}
+    const updateCartItemCount = (newAmount, itemId) => {
+        setCardItem((prev) => ({ ...prev, [itemId]: newAmount }));
+      };
+
+      const getTotalCartAmount = () => {
+        let totalAmount = 0;
+        for (const item in cardItem) {
+          if (cardItem[item] > 0) {
+            let itemInfo = products.find((product) => product.id === Number(item));
+            totalAmount += cardItem[item] * itemInfo.price;
+          }
+        }
+        return totalAmount;
+      };
+    
+
+    const contextValue = {addToCart, removeFromCart,cardItem, updateCartItemCount,getTotalCartAmount}
   return (
     <ShopContext.Provider value ={contextValue}>{props.children}</ShopContext.Provider>
   )
