@@ -18,7 +18,7 @@ const getDefaultCart = () =>{
 export const ShopContextProvider = (props) => {
 
 const [cardItem, setCardItem]= useState(getDefaultCart)
-
+console.log(cardItem)
 const addToCart = (itemId) =>{
 setCardItem((prev) => ({ ...prev, [itemId]: prev[itemId] +1 }))}
 

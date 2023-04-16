@@ -24,3 +24,10 @@
     margin-left: 20px;
     font-size: 25px;
   }
+
+.red{
+  width: 52px;
+  color:wheat;
+  border-radius: 50%;
+  position: relative;
+}
